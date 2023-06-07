@@ -2,6 +2,7 @@ import './TaDa.css';
 import Box from '@mui/material/Box';
 
 import { Header, Panel, TodoList } from 'Components';
+import { SignIn } from 'Pages/SignIn/SignIn';
 import { useState } from 'react';
 
 export const TaDa = () => {
@@ -71,7 +72,8 @@ export const TaDa = () => {
 
 	return (
 		<div className='TaDa'>
-			<Box display='flex' flexDirection='column' width='400px'>
+			<SignIn />
+			{/* <Box display='flex' flexDirection='column' width='400px'>
 				<Header />
 				<Panel createTask={createTask} />
 				<TodoList
@@ -82,7 +84,7 @@ export const TaDa = () => {
 					editId={editId}
 					onChangeTodo={onChangeTodo}
 				/>
-			</Box>
+			</Box> */}
 		</div>
 	);
 };

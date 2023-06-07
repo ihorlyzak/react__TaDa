@@ -59,3 +59,4 @@ export const TodoItem = ({ task, removeTask, updateTaskCheck, editTask }) => {
 		</Paper>
 	);
 };
+

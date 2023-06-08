@@ -1,8 +1,10 @@
+import { ThemeProvider, createTheme } from '@mui/material';
 import './TaDa.css';
 import Box from '@mui/material/Box';
 
 import { Header, Panel, TodoList } from 'Components';
 import { SignIn } from 'Pages/SignIn/SignIn';
+
 import { useState } from 'react';
 
 export const TaDa = () => {
@@ -70,10 +72,25 @@ export const TaDa = () => {
 		setEditId(null);
 	};
 
+	const theme = createTheme({
+		palette: {
+			primary: {
+				main: '#fff',
+			},
+			secondary: {
+				main: '#000',
+			},
+		},
+		typography: {
+			fontFamily: 'Roboto, Arial, sans-serif',
+		},
+	});
+	
 	return (
-		<div className='TaDa'>
-			<SignIn />
-			{/* <Box display='flex' flexDirection='column' width='400px'>
+		<ThemeProvider theme={theme}>
+			<div className='TaDa'>
+				<SignIn />
+				{/* <Box display='flex' flexDirection='column' width='400px'>
 				<Header />
 				<Panel createTask={createTask} />
 				<TodoList
@@ -85,6 +102,7 @@ export const TaDa = () => {
 					onChangeTodo={onChangeTodo}
 				/>
 			</Box> */}
-		</div>
+			</div>
+		</ThemeProvider>
 	);
 };

@@ -74,12 +74,12 @@ export const TaDa = () => {
 
 	const theme = createTheme({
 		palette: {
-			primary: {
-				main: '#fff',
-			},
-			secondary: {
-				main: '#000',
-			},
+			// primary: {
+			// 	main: '#fff',
+			// },
+			// secondary: {
+			// 	main: '#000',
+			// },
 		},
 		typography: {
 			fontFamily: 'Roboto, Arial, sans-serif',

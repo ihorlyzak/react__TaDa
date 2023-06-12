@@ -1,7 +1,7 @@
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 
-export const SignInBox = styled(Box)({
+export const AuthBox = styled(Box)({
 	width: '100vw',
 	height: '100vh',
 	display: 'flex',

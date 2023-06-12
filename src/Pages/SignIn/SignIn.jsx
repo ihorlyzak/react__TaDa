@@ -1,12 +1,10 @@
-import { SignInBox, SignInGrid, SignInImage } from './Components';
-import { SignInForm } from './Components/SignInForm/SignInForm';
+import { AuthBox, AuthForm, AuthGrid, AuthImage } from 'Shared';
 
 export const SignIn = () => (
-	<SignInGrid container>
-		<SignInBox>
-			<SignInImage />
-
-			<SignInForm />
-		</SignInBox>
-	</SignInGrid>
+	<AuthGrid container>
+		<AuthBox>
+			<AuthImage />
+			<AuthForm />
+		</AuthBox>
+	</AuthGrid>
 );

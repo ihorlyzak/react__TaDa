@@ -1,5 +1,13 @@
 @import 'reset-css';
-@import 'Assets/Styles/';
+
+:root {
+	--white: #FFFFFF;
+	--black: #000000;
+	--orange: #ff4d01;
+	--blue: #1976D2;
+
+	--durationMiddle: .5s;	
+}
 
 * {
 	margin: 0;
@@ -8,7 +16,7 @@
 }
 
 html {
-	color: $black;
+	color: var(--black);
 	font-size: 18px;
 }
 
@@ -17,5 +25,4 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-// 
 

@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import styled from 'styled-components';
 
-export const SignInGrid = styled(Grid)({
+export const AuthGrid = styled(Grid)({
 	alignItems: 'center',
 	justifyContent: 'center',
 	minHeight: '100vh',

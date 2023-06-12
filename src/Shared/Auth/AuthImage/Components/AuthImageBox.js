@@ -1,7 +1,7 @@
 import { Box } from '@mui/material/';
 import styled from 'styled-components';
 
-export const SignInImageBox = styled(Box)({
+export const AuthImageBox = styled(Box)({
 	maxWidth: '50%',
 	width: '50%',
 	height: '100%',

@@ -1,21 +1,15 @@
 import { Button } from '@mui/material';
-import { styled } from '@mui/system';
+import styled from 'styled-components';
 
-export const TaDaButton = ({ text, onClick, props }) => {
+export const TaDaButton = ({ text, onClick, ...rest }) => {
 	return (
-		<CustomButton onClick={onClick} {...props}>
+		<CustomButton onClick={onClick} {...rest}>
 			{text}
 		</CustomButton>
 	);
 };
 
-const CustomButton = styled(Button)(({ theme }) => ({
-	width: '100%',
-	color: theme.palette.primary.main,
-	backgroundColor: theme.palette.primary.secondary,
-	padding: theme.spacing(1, 2),
-	borderRadius: theme.shape.borderRadius,
-	'&:hover': {
-		backgroundColor: theme.palette.secondary.main,
-	},
+const CustomButton = styled(Button)(({ fullWidth }) => ({
+	width: fullWidth ? '100%' : 'fit-content',
+	padding: '5px 20px',
 }));

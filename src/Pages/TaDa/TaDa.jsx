@@ -7,6 +7,8 @@ import { SignIn } from 'Pages/SignIn/SignIn';
 
 import { useState } from 'react';
 import { SignUp } from 'Pages/SignUp/SignUp';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from 'Routes/AppRoutes';
 
 export const TaDa = () => {
 	const [editId, setEditId] = useState(null);
@@ -86,13 +88,16 @@ export const TaDa = () => {
 			fontFamily: 'Roboto, Arial, sans-serif',
 		},
 	});
-	
+
 	return (
-		<ThemeProvider theme={theme}>
-			<div className='TaDa'>
-				{/* <SignIn /> */}
-				<SignUp />
-				{/* <Box display='flex' flexDirection='column' width='400px'>
+		<BrowserRouter>
+			<ThemeProvider theme={theme}>
+				<AppRoutes />
+
+				<div className='TaDa'>
+					{/* <SignIn /> */}
+					<SignUp />
+					{/* <Box display='flex' flexDirection='column' width='400px'>
 				<Header />
 				<Panel createTask={createTask} />
 				<TodoList
@@ -104,7 +109,8 @@ export const TaDa = () => {
 					onChangeTodo={onChangeTodo}
 				/>
 			</Box> */}
-			</div>
-		</ThemeProvider>
+				</div>
+			</ThemeProvider>
+		</BrowserRouter>
 	);
 };

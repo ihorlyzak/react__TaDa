@@ -6,6 +6,7 @@ import { Header, Panel, TodoList } from 'Components';
 import { SignIn } from 'Pages/SignIn/SignIn';
 
 import { useState } from 'react';
+import { SignUp } from 'Pages/SignUp/SignUp';
 
 export const TaDa = () => {
 	const [editId, setEditId] = useState(null);
@@ -89,7 +90,8 @@ export const TaDa = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className='TaDa'>
-				<SignIn />
+				{/* <SignIn /> */}
+				<SignUp />
 				{/* <Box display='flex' flexDirection='column' width='400px'>
 				<Header />
 				<Panel createTask={createTask} />

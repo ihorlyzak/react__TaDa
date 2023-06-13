@@ -4,7 +4,9 @@ import { TextField } from '@mui/material';
 
 import { AuthFormBox } from './Components/AuthFormBox';
 
-export const AuthForm = () => {
+export const AuthForm = ({ signUp = false }) => {
+	const authButtonText = signUp ? 'Sign up' : 'Sign in';
+
 	return (
 		<AuthFormBox>
 			<TaDaBox width='500px'>
@@ -38,7 +40,7 @@ export const AuthForm = () => {
 					variant='outlined'
 					type='submit'
 					color='primary'
-					text='Sign in'
+					text={authButtonText}
 					// clickHandler={handleSubmit}
 				/>
 			</TaDaBox>

@@ -1,7 +1,8 @@
-import React from 'react'
+import { AuthContainer, AuthForm, AuthImage } from 'Shared';
 
-export const SignUp = () => {
-	return (
-		<div>SignUp</div>
-	)
-}
+export const SignUp = () => (
+	<AuthContainer>
+		<AuthForm signUp />
+		<AuthImage />
+	</AuthContainer>
+);

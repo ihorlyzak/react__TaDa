@@ -1,10 +1,8 @@
-import { AuthBox, AuthForm, AuthGrid, AuthImage } from 'Shared';
+import { AuthContainer, AuthForm, AuthImage } from 'Shared';
 
 export const SignIn = () => (
-	<AuthGrid container>
-		<AuthBox>
-			<AuthImage />
-			<AuthForm />
-		</AuthBox>
-	</AuthGrid>
+	<AuthContainer>
+		<AuthImage />
+		<AuthForm />
+	</AuthContainer>
 );

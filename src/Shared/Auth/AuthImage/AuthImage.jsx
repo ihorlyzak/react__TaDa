@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { AuthImageTitle } from './Components/AuthImageTitle';
-import { AuthImageBox, getAuthBgStyles } from './Components/AuthImageBox';
 import { getRandomBackground } from 'Helpers';
+import { AuthImageBox, AuthImageLogo, getAuthBgStyles } from './Components';
 
 export const AuthImage = () => {
 	const backgroundUrl = useMemo(() => getRandomBackground(), []);
@@ -10,13 +10,15 @@ export const AuthImage = () => {
 
 	return (
 		<AuthImageBox style={authBackground}>
-			<AcUnitIcon
-				sx={{
-					color: 'var(--orange)',
-					fontSize: '12rem',
-				}}
-			/>
-			<AuthImageTitle>TaDa</AuthImageTitle>
+			<AuthImageLogo>
+				<AcUnitIcon
+					sx={{
+						color: 'var(--orange)',
+						fontSize: '12rem',
+					}}
+				/>
+				<AuthImageTitle>TaDa</AuthImageTitle>
+			</AuthImageLogo>
 		</AuthImageBox>
 	);
 };

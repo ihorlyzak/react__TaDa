@@ -1,6 +1,6 @@
 import { PasswordInput, TaDaBox, TaDaButton, AccountActions } from 'Shared';
 import { TextField, Typography } from '@mui/material';
-import { AuthFormBox } from './Components/AuthFormBox';
+import { AuthFormBox } from './Components';
 
 export const AuthForm = ({ signUp = false }) => {
 	const authText = signUp ? 'Sign up' : 'Sign in';

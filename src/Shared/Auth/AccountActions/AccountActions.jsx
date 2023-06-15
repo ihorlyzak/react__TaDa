@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { useRoutesPaths } from 'Routes';
 import { TaDaLink } from 'Shared/TaDaLink/TaDaLink';
-import { AccountActionsBox } from './Components/AccountActionsBox/AccountActionsBox';
+import { AccountActionsBox } from './Components';
 
 export const AccountActions = () => {
 	const location = useLocation();

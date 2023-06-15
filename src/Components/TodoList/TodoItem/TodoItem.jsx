@@ -55,8 +55,6 @@ export const TodoItem = ({ task, removeTask, updateTaskCheck, editTask }) => {
 					<EditIcon />
 				</IconButton>
 			</Stack>
-
 		</Paper>
 	);
 };
-

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import { TextField, Paper, Button } from '@mui/material';
 import { Add } from '@mui/icons-material';
+import { useState } from 'react';
 
 const DEFAULT_TASK = { name: '', description: '' };
 

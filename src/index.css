@@ -1,12 +1,14 @@
 @import 'reset-css';
 
 :root {
-	--white: #FFFFFF;
+	--white: #ffffff;
 	--black: #000000;
 	--orange: #ff4d01;
-	--blue: #1976D2;
+	--blue: #1976d2;
 
-	--durationMiddle: .5s;	
+	--radiusMain: 20px;
+
+	--durationMiddle: 0.5s;
 }
 
 * {
@@ -17,7 +19,7 @@
 
 html {
 	color: var(--black);
-	font-size: 18px;
+	font-size: '1rem';
 }
 
 body {
@@ -25,4 +27,3 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-

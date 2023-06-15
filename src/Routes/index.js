@@ -1,2 +1,2 @@
 export * from './hooks';
-export { default } from './AppRoutes';
+export { AppRoutes } from './AppRoutes';

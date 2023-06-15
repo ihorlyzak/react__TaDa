@@ -11,12 +11,8 @@ export const useRoutes = () => {
 			path: '*',
 			element: <div>Not Found</div>,
 		},
-		// {
-		// 	path: routes.base(),
-		// 	element: <VirtualFriendListPage />,
-		// },
 		{
-			path: routes.signIn(),
+			path: routes.base(),
 			element: <SignIn />,
 		},
 		{

@@ -1,13 +1,12 @@
-import * as React from 'react';
+import { useMemo } from 'react';
 
 import { pathMaker } from '../pathMaker';
 
 export const useRoutesPaths = () => {
-	return React.useMemo(
+	return useMemo(
 		() => ({
 			routes: {
 				base: pathMaker('/'),
-				signIn: pathMaker('/sign-in'),
 				signUp: pathMaker('/sign-up'),
 			},
 		}),

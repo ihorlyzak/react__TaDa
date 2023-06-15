@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material';
 import './TaDa.css';
 import Box from '@mui/material/Box';
@@ -5,10 +6,9 @@ import Box from '@mui/material/Box';
 import { Header, Panel, TodoList } from 'Components';
 import { SignIn } from 'Pages/SignIn/SignIn';
 
-import { useState } from 'react';
 import { SignUp } from 'Pages/SignUp/SignUp';
 import { BrowserRouter } from 'react-router-dom';
-import AppRoutes from 'Routes/AppRoutes';
+import { AppRoutes } from 'Routes';
 
 export const TaDa = () => {
 	const [editId, setEditId] = useState(null);
@@ -93,11 +93,13 @@ export const TaDa = () => {
 		<BrowserRouter>
 			<ThemeProvider theme={theme}>
 				<AppRoutes />
+			</ThemeProvider>
+		</BrowserRouter>
+	);
+};
 
-				<div className='TaDa'>
-					{/* <SignIn /> */}
-					<SignUp />
-					{/* <Box display='flex' flexDirection='column' width='400px'>
+{
+	/* <Box display='flex' flexDirection='column' width='400px'>
 				<Header />
 				<Panel createTask={createTask} />
 				<TodoList
@@ -108,9 +110,5 @@ export const TaDa = () => {
 					editId={editId}
 					onChangeTodo={onChangeTodo}
 				/>
-			</Box> */}
-				</div>
-			</ThemeProvider>
-		</BrowserRouter>
-	);
-};
+			</Box> */
+}

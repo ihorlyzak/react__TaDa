@@ -3,7 +3,7 @@ import React from 'react';
 
 export const TaDaBox = ({ children, ...rest }) => {
 	return (
-		<Box {...rest} width='500px'>
+		<Box {...rest}>
 			{children}
 		</Box>
 	);

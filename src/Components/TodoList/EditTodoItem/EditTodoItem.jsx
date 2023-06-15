@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { Edit as EditIcon } from '@mui/icons-material';
 import { Button, Paper, TextField } from '@mui/material';
-import { useState } from 'react';
 
 export const EditTodoItem = ({ task, onTaskUpdate }) => {
 	const [editTask, setEditTask] = useState({

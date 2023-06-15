@@ -2,7 +2,7 @@ import { AuthContainer, AuthForm, AuthImage } from 'Shared';
 
 export const SignUp = () => (
   <AuthContainer>
-    <AuthForm signUp />
+    <AuthForm isSignUp />
     <AuthImage />
   </AuthContainer>
 );

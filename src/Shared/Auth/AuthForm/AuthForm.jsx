@@ -1,9 +1,14 @@
 import { PasswordInput, TaDaBox, TaDaButton, AccountActions } from 'Shared';
 import { TextField, Typography } from '@mui/material';
 import { AuthFormBox } from './Components';
+import { AuthDetails } from './Components/AuthDetails';
+import { useAuth } from 'hooks/useAuth';
 
-export const AuthForm = ({ signUp = false }) => {
-  const authText = signUp ? 'Sign up' : 'Sign in';
+export const AuthForm = ({ isSignUp = false }) => {
+  const { loginValues, updateLoginValues, signIn, signUp } = useAuth();
+  const authText = isSignUp ? 'Sign up' : 'Sign in';
+
+  const handleAuth = async e => (signUp ? await signUp(e) : await signIn(e));
 
   return (
     <AuthFormBox>
@@ -28,8 +33,8 @@ export const AuthForm = ({ signUp = false }) => {
             type='text'
             name='username'
             margin='normal'
-            // value={loginValues.username}
-            // onChange={handleFormChange}
+            value={loginValues.username}
+            onChange={updateLoginValues}
           />
 
           <PasswordInput
@@ -38,8 +43,8 @@ export const AuthForm = ({ signUp = false }) => {
             variant='standard'
             size='medium'
             name='password'
-            // value={loginValues.username}
-            // onChange={handleFormChange}
+            value={loginValues.password}
+            onChange={updateLoginValues}
           />
 
           <TaDaButton
@@ -50,11 +55,13 @@ export const AuthForm = ({ signUp = false }) => {
             type='submit'
             color='primary'
             text={authText}
-            // clickHandler={handleSubmit}
+            onClick={handleAuth}
           />
         </TaDaBox>
 
         <AccountActions />
+
+        <AuthDetails />
       </AuthFormBox>
     </AuthFormBox>
   );

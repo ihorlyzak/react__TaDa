@@ -4,20 +4,20 @@ import { SignUp } from 'Pages/SignUp/SignUp';
 import { useRoutesPaths } from './useRoutesPaths';
 
 export const useRoutes = () => {
-	const { routes } = useRoutesPaths();
+  const { routes } = useRoutesPaths();
 
-	return [
-		{
-			path: '*',
-			element: <div>Not Found</div>,
-		},
-		{
-			path: routes.base(),
-			element: <SignIn />,
-		},
-		{
-			path: routes.signUp(),
-			element: <SignUp />,
-		},
-	];
+  return [
+    {
+      path: '*',
+      element: <div>Not Found</div>,
+    },
+    {
+      path: routes.base(),
+      element: <SignIn />,
+    },
+    {
+      path: routes.signUp(),
+      element: <SignUp />,
+    },
+  ];
 };

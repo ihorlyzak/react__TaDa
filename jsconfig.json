@@ -1,9 +1,9 @@
 {
-	"compilerOptions": {
-		"baseUrl": "src",
-		"paths": {
-			"@shared/*": ["./src/Shared/*"]
-		}
-	},
-	"include": ["src"]
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@shared/*": ["./src/Shared/*"]
+    }
+  },
+  "include": ["src"]
 }

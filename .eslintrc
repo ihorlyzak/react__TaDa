@@ -1,12 +1,13 @@
 {
-	"extends": ["react-app", "react-app/jest", "prettier"],
-	"rules": {
-		"no-unused-vars": "warn",
-		"prefer-const": "warn",
-		"no-console": "warn",
-		"quotes": ["error", "single"],
-		"jsx-quotes": ["error", "prefer-single"],
-		"comma-dangle": ["error", "always-multiline"],
-		"semi": ["warn", "always"]
-	}
+  "extends": ["react-app", "react-app/jest", "prettier"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "prefer-const": "warn",
+    "no-console": "warn",
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "comma-dangle": ["error", "always-multiline"],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "semi": ["warn", "always"]
+  }
 }

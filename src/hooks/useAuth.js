@@ -1,15 +1,22 @@
-import { useState } from 'react';
-import { auth } from 'Shared/Auth/Firebase/firebase';
+import { useEffect, useState } from 'react';
+import { auth } from 'firebaseAuth/firebase';
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { useRoutesPaths } from 'Routes';
 
 export const useAuth = () => {
+  const navigate = useNavigate();
+  const { routes } = useRoutesPaths();
+
   const [loginValues, setLoginValues] = useState({
     username: '',
     password: '',
   });
+  const [error, setError] = useState('');
   const [userCredentials, setUserCredentials] = useState(null);
 
   const updateLoginValues = e => {
@@ -24,13 +31,14 @@ export const useAuth = () => {
   const signIn = async e => {
     e.preventDefault();
     try {
-      const userCredentials = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         loginValues.username,
         loginValues.password,
       );
-      setUserCredentials(userCredentials);
+      navigate(routes.mainPage());
     } catch (err) {
+      setError(err);
       throw new Error(err);
     }
   };
@@ -38,16 +46,25 @@ export const useAuth = () => {
   const signUp = async e => {
     e.preventDefault();
     try {
-      const userCredentials = await signInWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         auth,
         loginValues.username,
         loginValues.password,
       );
-      setUserCredentials(userCredentials);
+      navigate(routes.mainPage());
     } catch (err) {
+      setError(err);
       throw new Error(err);
     }
   };
 
-  return { loginValues, userCredentials, updateLoginValues, signIn, signUp };
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, user =>
+      user ? setUserCredentials(user) : setUserCredentials(null),
+    );
+
+    return () => unsub();
+  }, []);
+
+  return { loginValues, error, userCredentials, updateLoginValues, signIn, signUp };
 };

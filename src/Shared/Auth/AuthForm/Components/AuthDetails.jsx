@@ -1,6 +1,6 @@
-import { onAuthStateChanged, signOut } from '@firebase/auth';
-import { auth } from 'Shared/Auth/Firebase/firebase';
 import { useEffect, useState } from 'react';
+import { onAuthStateChanged, signOut } from '@firebase/auth';
+import { auth } from 'firebaseAuth/firebase';
 
 export const AuthDetails = () => {
   const [user, setUser] = useState(null);

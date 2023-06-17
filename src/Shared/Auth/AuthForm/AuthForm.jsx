@@ -7,8 +7,7 @@ import { useAuth } from 'hooks/useAuth';
 export const AuthForm = ({ isSignUp = false }) => {
   const { loginValues, updateLoginValues, signIn, signUp } = useAuth();
   const authText = isSignUp ? 'Sign up' : 'Sign in';
-
-  const handleAuth = async e => (signUp ? await signUp(e) : await signIn(e));
+  const handleSubmit = async e => (signUp ? await signUp(e) : await signIn(e));
 
   return (
     <AuthFormBox>
@@ -55,7 +54,7 @@ export const AuthForm = ({ isSignUp = false }) => {
             type='submit'
             color='primary'
             text={authText}
-            onClick={handleAuth}
+            onClick={handleSubmit}
           />
         </TaDaBox>
 

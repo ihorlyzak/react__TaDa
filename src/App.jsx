@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material';
-import './TaDa.css';
 import Box from '@mui/material/Box';
 
 import { Header, Panel, TodoList } from 'Components';
@@ -9,6 +8,7 @@ import { SignIn } from 'Pages/SignIn/SignIn';
 import { SignUp } from 'Pages/SignUp/SignUp';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from 'Routes';
+import { AuthContextProvider } from 'context/AuthContext';
 
 export const TaDa = () => {
   const [editId, setEditId] = useState(null);
@@ -90,11 +90,13 @@ export const TaDa = () => {
   });
 
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <AppRoutes />
-      </ThemeProvider>
-    </BrowserRouter>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <AppRoutes />
+        </ThemeProvider>
+      </BrowserRouter>
+    </AuthContextProvider>
   );
 };
 

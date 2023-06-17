@@ -1,0 +1,35 @@
+import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from 'firebase/auth';
+import { auth } from 'firebaseAuth/firebase';
+
+const UserContext = createContext();
+
+export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
+  const createUser = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      // console.log('user', currentUser);
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <UserContext.Provider value={{ createUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+export const UserAuth = () => {
+  return useContext(UserContext);
+};

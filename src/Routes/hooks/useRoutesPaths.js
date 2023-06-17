@@ -8,6 +8,7 @@ export const useRoutesPaths = () => {
       routes: {
         base: pathMaker('/'),
         signUp: pathMaker('/sign-up'),
+        mainPage: pathMaker('/main'),
       },
     }),
     [],

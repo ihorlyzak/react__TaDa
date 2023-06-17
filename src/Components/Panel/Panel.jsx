@@ -1,11 +1,15 @@
 import { TextField, Paper, Button } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import { useState } from 'react';
+import { useAuth } from 'hooks/useAuth';
 
 const DEFAULT_TASK = { name: '', description: '' };
 
 export const Panel = ({ createTask }) => {
   const [task, setTask] = useState(DEFAULT_TASK);
+
+  const { loginValues, userCredentials, updateLoginValues, signIn, signUp } = useAuth();
+  console.log('userCredentials', userCredentials)
 
   const handleClick = () => {
     createTask(task);

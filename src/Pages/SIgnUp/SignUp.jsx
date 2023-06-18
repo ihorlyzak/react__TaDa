@@ -1,4 +1,4 @@
-import { AuthContainer, AuthForm, AuthImage } from 'Shared';
+import { AuthContainer, AuthForm, AuthImage } from 'design-system';
 
 export const SignUp = () => (
   <AuthContainer>

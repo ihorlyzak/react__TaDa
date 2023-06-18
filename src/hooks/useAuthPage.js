@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useRoutesPaths } from 'Routes';
 import { useLocation } from 'react-router-dom';
+import { useRoutesPaths } from 'routes';
 
 export const useAuthPage = () => {
   const [isSignUpPage, setIsSignUpPage] = useState(false);

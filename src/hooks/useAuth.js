@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
-import { auth } from 'firebaseAuth/firebase';
+import { useState } from 'react';
 import {
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { useRoutesPaths } from 'Routes';
+import { useRoutesPaths } from 'routes';
+import { auth } from 'services';
 
 export const useAuth = () => {
   const navigate = useNavigate();
@@ -17,7 +16,6 @@ export const useAuth = () => {
     password: '',
   });
   const [error, setError] = useState('');
-  const [userCredentials, setUserCredentials] = useState(null);
 
   const updateLoginValues = e => {
     setLoginValues(inputValues => {
@@ -28,7 +26,7 @@ export const useAuth = () => {
     });
   };
 
-  const signIn = async e => {
+  const signUp = async e => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(
@@ -43,7 +41,7 @@ export const useAuth = () => {
     }
   };
 
-  const signUp = async e => {
+  const signIn = async e => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(
@@ -58,13 +56,11 @@ export const useAuth = () => {
     }
   };
 
-  useEffect(() => {
-    const unsub = onAuthStateChanged(auth, user =>
-      user ? setUserCredentials(user) : setUserCredentials(null),
-    );
-
-    return () => unsub();
-  }, []);
-
-  return { loginValues, error, userCredentials, updateLoginValues, signIn, signUp };
+  return {
+    loginValues,
+    error,
+    updateLoginValues,
+    signIn,
+    signUp,
+  };
 };

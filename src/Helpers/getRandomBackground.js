@@ -1,4 +1,4 @@
-import { authBackgrounds } from 'Assets/Images/Auth';
+import { authBackgrounds } from 'assets';
 
 export const getRandomBackground = () => {
   const randomImageId = Math.floor(

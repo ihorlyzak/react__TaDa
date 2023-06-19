@@ -1,1 +1,0 @@
-export { getRandomBackground } from './getRandomBackground';

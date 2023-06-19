@@ -1,0 +1,29 @@
+@import 'reset-css';
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --orange: #ff4d01;
+  --blue: #1976d2;
+
+  --radiusMain: 20px;
+
+  --durationMiddle: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--black);
+  font-size: '1rem';
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

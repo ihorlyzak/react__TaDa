@@ -16,8 +16,5 @@ export { default as AuthForm } from './AuthForm';
 export * from './AccountActions';
 export { default as AccountActions } from './AccountActions';
 
-export * from './AuthContainer';
-export { default as AuthContainer } from './AuthContainer';
-
 export * from './AuthImage';
 export { default as AuthImage } from './AuthImage';

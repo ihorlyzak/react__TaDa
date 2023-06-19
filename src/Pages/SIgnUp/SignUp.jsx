@@ -1,8 +1,9 @@
-import { AuthContainer, AuthForm, AuthImage } from 'design-system';
+import { AuthForm, AuthImage } from 'design-system';
+import { FullScreenLayout } from 'layouts';
 
 export const SignUp = () => (
-  <AuthContainer>
+  <FullScreenLayout>
     <AuthForm isSignUp />
     <AuthImage />
-  </AuthContainer>
+  </FullScreenLayout>
 );

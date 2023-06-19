@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { AuthImageTitle } from './components/AuthImageTitle';
-import { AuthImageBox, AuthImageLogo, getAuthBgStyles } from './components';
-import { getRandomBackground } from 'helpers';
+import { AuthImageBox, AuthImageLogo } from './components';
+import { getRandomBackground } from 'utils';
+import { getBgStyles } from 'utils';
 
 const AuthImage = () => {
   const backgroundUrl = useMemo(() => getRandomBackground(), []);
-  const authBackground = getAuthBgStyles(backgroundUrl);
+  const authBackground = getBgStyles(backgroundUrl);
 
   return (
     <AuthImageBox style={authBackground}>

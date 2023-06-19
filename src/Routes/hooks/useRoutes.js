@@ -1,7 +1,6 @@
-import { SignIn } from 'pages/SignIn/SignIn';
-import { SignUp } from 'pages/SignUp/SignUp';
 import { useRoutesPaths } from './useRoutesPaths';
 import { Panel } from 'Components';
+import { NotFound, SignIn, SignUp } from 'pages';
 
 export const useRoutes = () => {
   const { routes } = useRoutesPaths();
@@ -9,7 +8,7 @@ export const useRoutes = () => {
   return [
     {
       path: '*',
-      element: <div>Not Found</div>,
+      element: <NotFound />,
       isProtected: false,
     },
     {
